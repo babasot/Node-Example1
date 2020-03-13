@@ -16,9 +16,16 @@ var freeMemory = os.freemem();
 const files = fs.readdirSync('./');
 //Inicia server
 const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/pain');
-    res.end('Lets take a look!!');
+    if(req.url == '/'){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/pain');
+        res.end('Lets take a look!!');
+    }
+    if(req.url == '/api/courses'){
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'text/pain');
+        res.end('By that i mean');
+    }    
 });
 //Servidor anda
 server.listen(port, hostname, ()=>{
